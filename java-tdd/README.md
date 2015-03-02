@@ -1,9 +1,13 @@
-Run ./gradlew eclipse to generate the correct files then import into IntelliJ/Eclipse.
+### Getting Started
 
-Includes by default:
+- Run ./gradlew eclipse
+- Import into IntelliJ/Eclipse.
 
-JUnit
-Hamcrest
-Mockito
+### Gradle Dependencies
 
-Guava
+- **Testing**
+	- JUnit
+	- Hamcrest
+	- Mockito
+- **Utils**
+	- Guava
