@@ -27,3 +27,4 @@ local.properties
 # js
 **/bower_components/*
 **/node_modules/*
+**/build/*
