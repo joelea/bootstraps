@@ -50,7 +50,7 @@ gulp.task('serve', ['dist'], function() {
   connect.server({ root: buildDist });
 });
 
-gulp.task('bundle', ['test', 'build'], function() {
+gulp.task('browserify', ['test', 'compile-js'], function() {
   return bundler.bundle()
     .pipe(source('scripts/bundle.js'))
     .pipe(gulp.dest(buildDist))
@@ -62,18 +62,18 @@ gulp.task('clean', function() {
              .pipe(paths(del));
 });
 
-gulp.task('build', ['clean'], function() {
+gulp.task('compile-coffee', ['clean'], function() {
   return gulp.src(scripts)
              .pipe(coffee())
              .pipe(gulp.dest(build));
 });
 
-gulp.task('test', ['build'], function() {
+gulp.task('test', ['compile-js'], function() {
   return gulp.src(buildTest)
              .pipe(mocha({reporter: 'mocha-osx-reporter'}));
 });
 
-gulp.task('niceTest', ['build'], function() {
+gulp.task('niceTest', ['compile-js'], function() {
   return gulp.src(buildTest)
              .pipe(mocha({}));
 });
@@ -83,9 +83,6 @@ gulp.task('html', ['clean'], function() {
              .pipe(gulp.dest(buildDist));
 
 });
-
-gulp.task('dist', config.tasks.dist);
-gulp.task('onChange', ['test']);
 
 gulp.task('reload', ['dist'], function() {
   connect.reload();
@@ -97,4 +94,8 @@ gulp.task('watch', ['clean'], function() {
     });
 });
 
+
+gulp.task('compile-js', config.tasks.jsCompilation);
+gulp.task('dist', config.tasks.dist);
+gulp.task('onChange', config.tasks.onFileChange);
 gulp.task('default', config.tasks.defaults, function() {});

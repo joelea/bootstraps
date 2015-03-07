@@ -1,6 +1,8 @@
 module.exports = {
   tasks: {
-    dist: ['bundle', 'html', 'sass'],
-    defaults: ['watch', 'test', 'serve']
+    dist: ['browserify', 'html', 'sass'],
+    defaults: ['watch', 'test', 'serve'],
+    onFileChange: ['test'],
+    jsCompilation: ['compile-coffee']
   }
 };
