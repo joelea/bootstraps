@@ -41,7 +41,7 @@ gulp.task('sass', ['clean'], function() {
              .pipe(gulp.dest(buildDist));
 });
 
-gulp.task('deploy', ['dist'], function() {
+gulp.task('gh-pages-deploy', ['dist'], function() {
   return gulp.src(buildDist + '/**/*')
              .pipe(deploy());
 });
