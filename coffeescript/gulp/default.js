@@ -5,7 +5,6 @@ var watch = require('gulp-watch');
 var gutil = require('gulp-util');
 var connect = require('gulp-connect');
 var sass = require('gulp-sass');
-var deploy = require('gulp-gh-pages');
 var concatCss = require('gulp-concat-css');
 var uglify = require('gulp-uglify');
 
@@ -25,11 +24,6 @@ var bundle = function() {
     .pipe(source('bundle.js'))
     .pipe(gulp.dest(config.build.dist));
 };
-
-gulp.task('gh-pages-deploy', ['dist'], function() {
-  return gulp.src(config.build.dist + '/**/*')
-             .pipe(deploy());
-});
 
 gulp.task('serve', ['dist'], function() {
   connect.server({ root: config.build.dist });
