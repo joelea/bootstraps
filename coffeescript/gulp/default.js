@@ -12,28 +12,11 @@ var del = require('del');
 var source = require('vinyl-source-stream');
 var paths = require('vinyl-paths');
 var buffer = require('vinyl-buffer');
-var browserify = require('browserify');
 
 var config = require('./config');
 
-var bundler = browserify(config.build.root + '/app.js');
-
-var bundle = function() {
-  return bundler.bundle()
-    .on('error', gutil.log.bind(gutil, 'Browserify Error'))
-    .pipe(source('bundle.js'))
-    .pipe(gulp.dest(config.build.dist));
-};
-
 gulp.task('serve', ['dist'], function() {
   connect.server({ root: config.build.dist });
-});
-
-gulp.task('browserify', ['test', 'compile-js'], function() {
-  return bundler.bundle()
-    .on('error', gutil.log.bind(gutil, 'Browserify Error'))
-    .pipe(source(config.build.scripts + '/bundle.js'))
-    .pipe(gulp.dest(config.build.dist));
 });
 
 gulp.task('clean', function() {
