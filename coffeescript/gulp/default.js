@@ -26,13 +26,6 @@ var bundle = function() {
     .pipe(gulp.dest(config.build.dist));
 };
 
-gulp.task('sass', ['clean'], function() {
-  return gulp.src(config.src.sass)
-             .pipe(sass())
-             .pipe(concatCss('styles/bundle.css'))
-             .pipe(gulp.dest(config.build.dist));
-});
-
 gulp.task('gh-pages-deploy', ['dist'], function() {
   return gulp.src(config.build.dist + '/**/*')
              .pipe(deploy());
