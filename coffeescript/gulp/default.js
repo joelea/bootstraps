@@ -19,11 +19,6 @@ gulp.task('serve', ['dist'], function() {
   connect.server({ root: config.build.dist });
 });
 
-gulp.task('clean', function() {
-  return gulp.src(config.build.root)
-             .pipe(paths(del));
-});
-
 gulp.task('compile-coffee', ['clean'], function() {
   return gulp.src(config.src.scripts + '/**/*.coffee')
              .pipe(coffee())
