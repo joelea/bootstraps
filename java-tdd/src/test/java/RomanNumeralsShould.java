@@ -9,4 +9,9 @@ public class RomanNumeralsShould {
         RomanNumerals romanNumerals = new RomanNumerals();
         assertThat(romanNumerals.convert(1), is("I"));
     }
+    @Test public void
+    convert_5_to_V() {
+        RomanNumerals romanNumerals = new RomanNumerals();
+        assertThat(romanNumerals.convert(5), is("V"));
+    }
 }
