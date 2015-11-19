@@ -3,6 +3,7 @@ import com.google.common.collect.ImmutableMap;
 public class RomanNumerals {
     private final ImmutableMap<Integer, String> numerals = ImmutableMap.of(
             5, "V",
+            4, "IV",
             1, "I"
     );
 

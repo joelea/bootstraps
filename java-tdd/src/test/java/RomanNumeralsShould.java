@@ -22,6 +22,10 @@ public class RomanNumeralsShould {
     }
 
     @Test public void
+    convert_4_to_IV() {
+        assertThat(romanNumerals.convertToNumeral(4), is("IV"));
+    }
+    @Test public void
     convert_5_to_V() {
         assertThat(romanNumerals.convertToNumeral(5), is("V"));
     }
