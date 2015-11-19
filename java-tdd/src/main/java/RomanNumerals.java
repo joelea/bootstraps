@@ -12,9 +12,6 @@ public class RomanNumerals {
                 return convertAndRecurse(number, atomicNumber);
             }
         }
-        if (number >= 1) {
-            return convertAndRecurse(number, 1);
-        }
         return "";
     }
 
