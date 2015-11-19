@@ -3,8 +3,8 @@ public class RomanNumerals {
         if(number == (5+2)) {
             return convertToNumeral(5) + convertToNumeral(2);
         }
-        if(number == 5) {
-            return "V";
+        if(number >= 5) {
+            return "V" + convertToNumeral(number - 5);
         }
         if (number == 2) {
             return "II";
