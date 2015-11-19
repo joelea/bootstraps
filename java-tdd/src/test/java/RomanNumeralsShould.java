@@ -34,4 +34,14 @@ public class RomanNumeralsShould {
     convert_7_To_VII() {
         assertThat(romanNumerals.convertToNumeral(7), is("VII"));
     }
+
+    @Test public void
+    convert_9_To_IX() {
+        assertThat(romanNumerals.convertToNumeral(9), is("IX"));
+    }
+
+    @Test public void
+    convert_10_To_X() {
+        assertThat(romanNumerals.convertToNumeral(10), is("X"));
+    }
 }
