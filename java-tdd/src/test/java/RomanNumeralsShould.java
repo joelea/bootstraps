@@ -7,6 +7,11 @@ public class RomanNumeralsShould {
     private final RomanNumerals romanNumerals = new RomanNumerals();
 
     @Test public void
+    convert_0_to_empty_string() {
+        assertThat(romanNumerals.convertToNumeral(0), is(""));
+    }
+
+    @Test public void
     convert_1_to_I() {
         assertThat(romanNumerals.convertToNumeral(1), is("I"));
     }
