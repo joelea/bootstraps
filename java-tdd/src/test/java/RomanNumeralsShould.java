@@ -15,4 +15,9 @@ public class RomanNumeralsShould {
     convert_5_to_V() {
         assertThat(romanNumerals.convertToNumeral(5), is("V"));
     }
+
+    @Test public void
+    convert_2_to_II() {
+        assertThat(romanNumerals.convertToNumeral(2), is("II"));
+    }
 }
