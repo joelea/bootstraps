@@ -8,11 +8,11 @@ public class RomanNumeralsShould {
 
     @Test public void
     convert_1_to_I() {
-        assertThat(romanNumerals.convert(1), is("I"));
+        assertThat(romanNumerals.convertToNumeral(1), is("I"));
     }
 
     @Test public void
     convert_5_to_V() {
-        assertThat(romanNumerals.convert(5), is("V"));
+        assertThat(romanNumerals.convertToNumeral(5), is("V"));
     }
 }
