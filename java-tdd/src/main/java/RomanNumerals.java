@@ -16,10 +16,7 @@ public class RomanNumerals {
     }
 
     private String convertAndRecurse(int number, int currentNumber) {
-        return numeralFor(currentNumber) + convertToNumeral(number - currentNumber);
+        return numerals.get(currentNumber) + convertToNumeral(number - currentNumber);
     }
 
-    private String numeralFor(int number) {
-        return numerals.get(number);
-    }
 }
